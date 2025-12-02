@@ -1,0 +1,217 @@
+/* GENERAL */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;;
+    color: #242424;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.row {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* NAVBAR SECTION */
+
+#landing {
+    background-color:#F2FBFB;
+}
+
+.nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 36px;
+}
+
+.nav__logo--wrapper {
+    overflow: hidden;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__logo {
+    width: 300px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    font-size: 18px;
+}
+
+.nav__btn {
+    padding: 16px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 18px;
+    background-color: #107173;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav__btn:hover {
+    background-color: #ff914d;
+}
+
+.nav__menu--link {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* HEADER SECTION */
+
+.header {
+    background-color: #107173;
+    padding: 76px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.web-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 36px;
+    color: white;
+}
+
+.search__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 400px;
+    position: relative;
+
+}
+
+.search__input {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    font-size: 1rem;
+
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    right: 24px;
+    cursor: pointer;
+}
+
+.fa-magnifying-glass:active {
+    color: #107173;
+    transform: scale(.9);
+}
+
+.loading {
+    display: none;
+}
+
+.error {
+    display: none;
+}
+
+/* MOVIE RESULTS  */
+
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    margin-top: 36px;
+}
+
+.movie-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: #F2FBFB;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    flex: 1 1 200px;     
+    max-width: 240px;
+    transition: all 300ms ease-in-out;
+}
+
+.movie-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px #ff914d;
+}
+
+.movie-card:active {
+    transform: scale(.95 );
+    box-shadow: 0 0 14px #00eaff;
+}
+
+.poster {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    
+}
+
+.title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.year,
+.rated,
+.genre {
+    font-weight: 600;
+    text-align: center;
+}
+
+.genre {
+    margin-bottom: 12px;
+}
+
+
+

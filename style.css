@@ -15,7 +15,7 @@ html {
 
 .row {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -33,17 +33,19 @@ button {
     cursor: pointer;
 }
 
-/* NAVBAR SECTION */
-
-#landing {
-    background-color:#F2FBFB;
+section {
+    background-color: #107173;
 }
 
+/* NAVBAR SECTION */
+
 .nav {
-    flex-direction: column;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding-bottom: 36px;
+    background-color:#F2FBFB;
+    padding: 0 32px;
 }
 
 .nav__logo--wrapper {
@@ -77,6 +79,7 @@ button {
     border-radius: 18px;
     background-color: #107173;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 300ms ease;
 }
 
 .nav__btn:hover {
@@ -92,11 +95,11 @@ button {
 /* HEADER SECTION */
 
 .header {
-    background-color: #107173;
     padding: 76px 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
 }
 
 .web-title {
@@ -125,28 +128,66 @@ button {
 
 }
 
-.fa-magnifying-glass {
+.search__btn {
     position: absolute;
     right: 24px;
     cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
+.search__btn:active {
+    transform: scale(.9);
+}
+
+.fa-magnifying-glass {
+    font-size: 18px;
+}
 .fa-magnifying-glass:active {
     color: #107173;
-    transform: scale(.9);
 }
 
 .loading {
     display: none;
+    justify-content: center;
+    margin-top: 36px;
+}
+
+.fa-spinner {
+    display: none;
+    font-size: 80px;
+    color: white;
+    animation: loadingSpin 1s linear infinite;
+}
+
+@keyframes loadingSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .error {
     display: none;
+    font-size: 18px;
+    color: white;
+    animation: jiggle-error 0.4s ease-in-out 2;
+    text-align: center;
+    margin-top: 24px;
+}
+
+@keyframes jiggle-error {
+    0%, 100% { transform: translateX(0); } 
+  20%, 60% { transform: translateX(-5px); } 
+  40%, 80% { transform: translateX(5px); }
 }
 
 /* MOVIE RESULTS  */
 
-.results-container {
+.results {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -157,7 +198,7 @@ button {
 
 .movie-card {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     background: #F2FBFB;
     border-radius: 18px;
     overflow: hidden;
@@ -165,6 +206,18 @@ button {
     flex: 1 1 200px;     
     max-width: 240px;
     transition: all 300ms ease-in-out;
+    margin-bottom: 48px;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
 }
 
 .movie-card:hover {
@@ -185,33 +238,25 @@ button {
 }
 
 .title {
+    width: 100%;
     font-size: 1.3rem;
     margin-bottom: 12px;
     text-align: center;
     font-size: 16px;
 }
 
-.movie-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.5;
-    padding: 8px;
-    text-align: center;
-    font-size: 12px;
-}
-
-.year,
-.rated,
-.genre {
+.year {
+    width: 100%;
+    font-size: 14px;
     font-weight: 600;
     text-align: center;
 }
 
-.genre {
-    margin-bottom: 12px;
-}
 
+.footer {
+    background-color: #0c5d5f;
+    display: flex;
+    justify-content: center;
+}
 
 

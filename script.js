@@ -6,6 +6,7 @@ const searchBtn = document.querySelector(".search__btn");
 const resultsContainer = document.querySelector(".results")
 const loadingMessage = document.querySelector(".loading");
 const errorMessage = document.querySelector(".error");
+const newReleaseBtn = document.getElementById("newReleasesBtn");
 
 // SearchInput = text box where you type a movie
 // searchBtn = the button you click to start searching
@@ -37,6 +38,7 @@ searchInput.addEventListener("keypress", (e) => {
         
     }
 });
+
 
 // MAIN PAGE SEARCH FUNCTION 
 function searchMovies() {
@@ -96,6 +98,7 @@ function displayMovies (movies) {
                         </div>`
     })
 }
+
 
 
 

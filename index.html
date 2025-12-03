@@ -1,62 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flick Finder | Movie Database</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
-    <script src="https://kit.fontawesome.com/8edc3486e0.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/8edc3486e0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <section id="landing">
-        <nav class="nav">
-                <!-- <div class="row"> -->
-                <figure class="nav__logo--wrapper">
-                    <img class="nav__logo" src="./assets/flick_finder_logo.svg">
-                </figure>
-                <ul class="nav__menu">
-                     <li class="nav__menu--links">
-                        <button class="nav__btn">
-                            <a class="nav__menu--link" href="#">Genres</a>
-                        </button>
-                    </li>
-                     <li class="nav__menu--links">
-                        <button class="nav__btn">
-                            <a class="nav__menu--link" href="#">New Releases</a>
-                        </button>
-                    </li>
-                    <li class="nav__menu--links">
-                        <button class="nav__btn">
-                            <a class="nav__menu--link" href="#">Home</a>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        <header class="header">
-            <div class="row">
-                <h1 class="web-title">Browse Movies</h1>
-                <div class="search__wrapper">
-                    <input type="text" placeholder="Search movies..." class="search__input"> <!-- This is where the user types the movie name -->
-                    <button class="search__btn">
-                        <i class="fa-solid fa-magnifying-glass"></i> <!-- button you click to search-->
-                    </button>
-                </div>
-                <div class="loading">
-                    <i class="fa-solid fa-spinner"></i>
-                </div> <!--the loading message before API is fetched-->
+      <nav class="nav">
+        <div class="nav__row">
 
-                <div class="error"></div> <!--error message if can't load API-->
+             <figure class="nav__logo--wrapper">
+              <img class="nav__logo" src="./assets/flick_finder_logo.svg" />
+            </figure>
+          <ul class="nav__menu">
+            <li class="nav__menu--links">
+              <a class="nav__menu--link" href="#">Pick of the Day </a>
+            </li>
+            <li class="nav__menu--links dropdown__wrapper">
+              <a class="nav__menu--link" href="#">Search by Genre </a>
+              <button class="dropdown__btn nav__menu--link">
+                <i class="nav__menu--link fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="dropdown__menu">
+                <li class="dropdown__item">
+                  <a class="dropdown__item--link" href="#">Comedy</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__item--link" href="#">Drama</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__item--link" href="#">Romantic Comedy</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__item--link" href="#">Action</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__item--link" href="#">Fantasy</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__item--link" href="#">Mystery</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__item--link" href="#">Western</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__menu--links">
+                <a class="nav__menu--link" href="./about.html">About</a>
+            </li>
+            <li class="nav__menu--links">
+                <a class="nav__menu--link" href="#">Home</a>
+            </li>
+        </ul>
+        </div>
+      </nav>
 
-                <div class="results"> <!-- Movie results will appear here -->
-                </div>   
-            </div>
-        </header>
+      <header class="header">
+        <div class="row">
+          <h1 class="web-title">Browse Movies</h1>
+          <div class="search__wrapper">
+            <input
+              type="text"
+              placeholder="Search movies..."
+              class="search__input"
+            />
+            <!-- This is where the user types the movie name -->
+            <button class="search__btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <!-- button you click to search-->
+            </button>
+          </div>
+          <div class="loading">
+            <i class="fa-solid fa-spinner"></i>
+          </div>
+          <!--the loading message before API is fetched-->
+
+          <div class="error"></div>
+          <!--error message if can't load API-->
+
+          <div class="results"><!-- Movie results will appear here --></div>
+        </div>
+      </header>
     </section>
     <footer class="footer">
-        <p class="copyright">&copy 2025 MeganKane</p>
-
+      <p class="copyright">&copy 2025 MeganKane</p>
     </footer>
-</body>
+  </body>
 </html>
-

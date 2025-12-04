@@ -21,7 +21,7 @@
             </figure>
           <ul class="nav__menu">
             <li class="nav__menu--links">
-              <a class="nav__menu--link" href="#">Pick of the Day </a>
+              <a id="movie-generator" class="nav__menu--link" href="#">Random Movie Generator </a>
             </li>
             <li class="nav__menu--links dropdown__wrapper">
               <a class="nav__menu--link" href="#">Search by Genre </a>
@@ -30,30 +30,21 @@
               </button>
               <ul class="dropdown__menu">
                 <li class="dropdown__item">
-                  <a class="dropdown__item--link" href="#">Comedy</a>
+                  <a id="comedy" class="dropdown__item--link" href="#">Comedy</a>
                 </li>
                 <li class="dropdown__item">
-                  <a class="dropdown__item--link" href="#">Drama</a>
+                  <a id="drama" class="dropdown__item--link no-click" href="#">Drama</a>
                 </li>
                 <li class="dropdown__item">
-                  <a class="dropdown__item--link" href="#">Romantic Comedy</a>
+                  <a id="action" class="dropdown__item--link no-click" href="#">Action</a>
                 </li>
                 <li class="dropdown__item">
-                  <a class="dropdown__item--link" href="#">Action</a>
-                </li>
-                <li class="dropdown__item">
-                  <a class="dropdown__item--link" href="#">Fantasy</a>
-                </li>
-                <li class="dropdown__item">
-                  <a class="dropdown__item--link" href="#">Mystery</a>
-                </li>
-                <li class="dropdown__item">
-                  <a class="dropdown__item--link" href="#">Western</a>
+                  <a id="mystery" class="dropdown__item--link no-click" href="#">Mystery</a>
                 </li>
               </ul>
             </li>
             <li class="nav__menu--links">
-                <a class="nav__menu--link" href="./about.html">About</a>
+                <a class="nav__menu--link no-click" href="#">About</a>
             </li>
             <li class="nav__menu--links">
                 <a class="nav__menu--link" href="#">Home</a>
@@ -64,6 +55,58 @@
 
       <header class="header">
         <div class="row">
+
+          <!-- BURGER BUTTON  -->
+          <div class="burger-menu__container">
+          <i class="fa-solid fa-bars burger-open"></i>
+          
+          <div class="burger-menu__dropdown">
+            <i class="fa-solid fa-x burger-close"></i>
+            <ul class="burger-menu__dropdown--ul">
+                <li class="dropdown__item burger-menu__item">
+                  <a id="home__btn" class="dropdown__item--link" href="#">Home</a>
+                </li>
+                <li class="dropdown__item burger-menu__item">
+                  <a class="dropdown__item--link no-click" href="#">About</a>
+                </li>
+                <li class="dropdown__item burger-menu__item">
+                  <a id="mobile-random" class="dropdown__item--link" href="#">Random Movie Generator</a>
+                </li>
+                <li class="dropdown__item burger-menu__item">
+                  <a class="dropdown__item--link no-click" href="#">Search by Genre</a>
+
+
+                  <button class="dropdown__btn">
+                <i class="dropdown__menu--link fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="dropdown__menu">
+                <li class="dropdown__item">
+                  <a id="comedy" class="dropdown__item--link" href="#">Comedy</a>
+                </li>
+                <li class="dropdown__item">
+                  <a id="drama" class="dropdown__item--link no-click" href="#">Drama</a>
+                </li>
+                <li class="dropdown__item">
+                  <a id="action" class="dropdown__item--link no-click" href="#">Action</a>
+                </li>
+                <li class="dropdown__item">
+                  <a id="mystery" class="dropdown__item--link no-click" href="#">Mystery</a>
+                </li>
+              </ul>
+
+
+
+                </li>
+              </ul>
+          </div>
+        </div>
+
+
+
+        <figure class="nav__logo--wrapper header__logo--wrapper">
+              <img class="nav__logo" src="./assets/flick_finder_logo.svg" />
+            </figure>
+
           <h1 class="web-title">Browse Movies</h1>
           <div class="search__wrapper">
             <input
@@ -90,7 +133,13 @@
       </header>
     </section>
     <footer class="footer">
-      <p class="copyright">&copy 2025 MeganKane</p>
+      <div class="footer__container">
+            <a href="#">
+            <img class="footer__logo" src="./assets/flick_finder_logo.svg" />
+            </a>
+        <p class="copyright">&copy 2025 MeganKane</p>
+      </div>
+
     </footer>
   </body>
 </html>

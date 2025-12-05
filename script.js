@@ -9,6 +9,7 @@ const errorMessage = document.querySelector(".error");
 const newReleaseBtn = document.getElementById("newReleasesBtn");
 const randomMovie = document.getElementById("movie-generator")
 
+let lastSearchResults = [];
 
 function showLoading(isLoading) {
     loadingMessage.style.display = isLoading ? "flex" : "none";
@@ -46,11 +47,6 @@ burgerGenreDropdowns.forEach(btn => {
     });
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-    localStorage.removeItem("lastSearch"); 
-    searchInput.value = "";                 
-    resultsContainer.innerHTML = "";        
-});
 
 // MAIN PAGE SEARCH FUNCTION 
 function searchMovies() {
@@ -100,6 +96,7 @@ async function fetchMovies (searchTerm) {
 }
 
 function displayMovies (movies) {
+    lastSearchResults = movies;
     resultsContainer.innerHTML = "";
 
     movies.forEach(movie => {
@@ -208,6 +205,8 @@ catch (error) {
 
 // SEARCH BY GENRE 
 
+
+
 const genreComedy = document.getElementById("comedy");
 const genreDrama = document.getElementById("drama");
 const genreAction = document.getElementById("action");
@@ -216,59 +215,37 @@ const genreMystery = document.getElementById("mystery");
 genreComedy.addEventListener("click", generateComedy);
 
 async function generateComedy () {
-    try {
-        showLoading(true);
-        clearError();
-        resultsContainer.innerHTML = "";
-
-       const searchTerms = ["a", "the", "man", "love"];
-       let movies = [];
-
-       for (let term of searchTerms) {
-        for (let page = 1; page <= 2; page++) {
-            const url = `${OMDB_API_URL}?s=${term}&type=movie&page=${page}&apikey=${OMDB_API_KEY}`;
-            const response = await fetch(url);
-            const data = await response.json();
-
-            if (data.Response === "True") {
-                movies = movies.concat(data.Search);
-            }
-        }
+    if (lastSearchResults.length === 0) {
+        showError("Search for movies first!");
+        return;
     }
+
+    showLoading(true);
+    clearError();
+    resultsContainer.innerHTML = "";
+
     const detailedMovies = [];
 
-    for (let movie of movies) {
-        const detailsUrl = `${OMDB_API_URL}?i=${movie.imdbID}&apikey=${OMDB_API_KEY}`;
-        const detailsResponse = await fetch(detailsUrl);
-        const fullMovie = await detailsResponse.json();
-
+    for (let movie of lastSearchResults) {
+        const url = `${OMDB_API_URL}?i=${movie.imdbID}&apikey=${OMDB_API_KEY}`;
+        const res = await fetch (url);
+        const fullMovie = await res.json();
         detailedMovies.push(fullMovie);
     }
 
-    const uniqueMovies = Array.from(
-            new Map(detailedMovies.map(m => [m.imdbID, m])).values()
-        );
-
-        const comedyMovies = uniqueMovies.filter(m =>
-            m.Genre && m.Genre.includes("Comedy")
-        );
+    const comedyMovies = detailedMovies.filter(movie => movie.Genre && movie.Genre.includes("Comedy")
+    );
 
     showLoading(false);
 
     if (comedyMovies.length === 0) {
-        showError("No comedies found 😢");
+        showError("No comedy movies found for your search.");
         return;
     }
 
     displayMovies(comedyMovies);
+}
 
-}
-catch (error) {
-    showLoading(false);
-    showError("Error fetching comedies: " + error.message);
-    console.error(error);
-    }
-}
 
 
 // BURGER MENU 
